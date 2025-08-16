@@ -27,7 +27,7 @@ Our first every GenAI driven meal planner! Woohooo!
 [Other LLMs via provider adapter (future)]
 
 # File layout
-meal_planner_app/
+nomly_meal_planner_app/
 ├── frontend/
 │   └── app.py
 ├── backend/
