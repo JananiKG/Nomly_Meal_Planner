@@ -1,4 +1,5 @@
-# backend/models.py
+# Create models.py with Pydantic schemas for InventoryItem, InventoryList
+
 from pydantic import BaseModel, Field
 from typing import List, Optional
 

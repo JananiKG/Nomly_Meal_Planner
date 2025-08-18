@@ -1,4 +1,5 @@
-# backend/test_models.py
+# Testing backend/models.py
+
 from backend.models import InventoryItem, InventoryList
 from pydantic import ValidationError
 
