@@ -1,7 +1,7 @@
 import os
 import google.generativeai as genai
 from typing import Dict, List, Any
-from .base2 import AIProvider
+from .base import AIProvider
 
 
 class GeminiProvider(AIProvider):
@@ -15,6 +15,12 @@ class GeminiProvider(AIProvider):
             raise ValueError("GEMINI_API_KEY not set in environment")
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel(model_name)
+
+    def generate(self, prompt: str) -> str:
+        """Accepts one prompt string (as MealPlanner sends)."""
+        # Example Gemini API call
+        response = self.model.generate_content(prompt)
+        return response.text
 
     def generate_meal_plan(self, goals: Dict[str, Any], inventory: List[Dict[str, Any]]) -> Dict[str, Any]:
         """

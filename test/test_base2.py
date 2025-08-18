@@ -1,4 +1,4 @@
-from backend.services.ai.base2 import AIProvider
+from backend.services.ai.base import AIProvider
 
 # Dummy implementation
 class DummyProvider(AIProvider):
