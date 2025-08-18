@@ -8,7 +8,7 @@ app = FastAPI()
 ai_client = GeminiProvider()
 
 # Create MealPlanner with AI client
-meal_planner = MealPlanner(ai_client)
+meal_planner = MealPlanner(ai_client, safe_mode=False)
 
 @app.post("/generate-meal-plan")
 def generate_meal_plan(goals: dict, inventory: list[str]):
