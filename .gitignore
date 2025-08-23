@@ -1,0 +1,47 @@
+# --- Python general ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# --- Virtual environments ---
+venv/
+.env/
+.venv/
+
+# --- IDE/editor stuff ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+
+# --- Python tooling ---
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Environment/config files ---
+.env.local
+.env.*.local
+*.env
+
+# --- Streamlit ---
+.streamlit/
+
+# --- Project data ---
+data/*.json   # if you don't want to commit local inventory/meals data
