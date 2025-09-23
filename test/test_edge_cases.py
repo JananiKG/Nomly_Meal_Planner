@@ -2,7 +2,7 @@
 
 import sys
 import os
-sys.path.append('/root/Nomly_Meal_Planner')
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from backend.utils.quantity_parser import calculate_inventory_updates, parse_quantity, subtract_quantities
 
