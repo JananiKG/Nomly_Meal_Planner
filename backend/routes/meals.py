@@ -49,7 +49,7 @@ async def generate_meal_plan(request: GenerateMealRequest):
         inventory_payload = [item.model_dump() for item in request.inventory]
 
         # Call your Task 3 planner
-        plan_dict = planner.plan_day(
+        plan_dict = planner.generate_meal_plan(
             goals=request.goals,
             inventory=inventory_payload,
             plan_date=request.date

@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from backend.services.ai.gemini import GeminiProvider  # example
 from backend.services.meal_planner import MealPlanner
+from pydantic import ValidationError
 
 app = FastAPI()
 
@@ -15,5 +16,10 @@ def generate_meal_plan(goals: dict, inventory: list[str]):
     try:
         plan = meal_planner.generate_meal_plan(goals, inventory)
         return plan.model_dump()  # Pydantic v2 way
+    except ValidationError as ve:
+        # Properly structured JSON for errors
+        return {"detail": ve.errors()}
     except Exception as e:
-        return {"detail": f"Meal generation failed: {e}"}
+        return {"detail": str(e)}
+    #except Exception as e:
+        #return {"detail": f"Meal generation failed: {e}"}
