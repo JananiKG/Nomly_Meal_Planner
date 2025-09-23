@@ -14,8 +14,9 @@ meal_planner = MealPlanner(ai_client, safe_mode=False)
 @app.post("/generate-meal-plan")
 def generate_meal_plan(goals: dict, inventory: list[str]):
     try:
-        plan = meal_planner.generate_meal_plan(goals, inventory)
-        return plan.model_dump()  # Pydantic v2 way
+        # Returns dict with meal_plan and inventory_updates
+        result = meal_planner.generate_meal_plan(goals, inventory)
+        return result
     except ValidationError as ve:
         # Properly structured JSON for errors
         return {"detail": ve.errors()}
