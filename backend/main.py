@@ -1,11 +1,11 @@
 from fastapi import FastAPI
-from backend.services.ai.gemini import GeminiProvider  # example
+from backend.services.ai.gemini import GeminiProvider
 from backend.services.meal_planner import MealPlanner
 from pydantic import ValidationError
 
 app = FastAPI()
 
-# Initialize AI provider (you’ll configure your API key etc. inside)
+# Initialize AI provider
 ai_client = GeminiProvider()
 
 # Create MealPlanner with AI client
@@ -21,5 +21,3 @@ def generate_meal_plan(goals: dict, inventory: list[str]):
         return {"detail": ve.errors()}
     except Exception as e:
         return {"detail": str(e)}
-    #except Exception as e:
-        #return {"detail": f"Meal generation failed: {e}"}
