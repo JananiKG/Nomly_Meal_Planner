@@ -64,7 +64,7 @@ def test_api_edge_cases():
     import requests
     import json
     
-    base_url = "http://127.0.0.1:8087/generate-meal-plan"
+    base_url = "http://127.0.0.1:8087/meals/generate"
     
     # Edge Case 1: Very low inventory
     print("\n1. Very low inventory:")

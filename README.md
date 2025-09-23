@@ -91,14 +91,23 @@ uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
 
 ---
 
-## 📡 **API Usage**
+## 📡 **API Reference**
 
-### **Generate Meal Plan**
-```bash
-POST /generate-meal-plan
+### **Base URL**
+```
+http://localhost:8000
 ```
 
-**Request:**
+### **Endpoints**
+
+#### **Generate Meal Plan**
+```http
+POST /meals/generate
+```
+
+Generate AI-powered meal plan with automatic inventory tracking.
+
+**Request Body:**
 ```json
 {
   "goals": {
@@ -161,6 +170,33 @@ POST /generate-meal-plan
     "warnings": []
   }
 }
+```
+
+**Error Response:**
+```json
+{
+  "detail": [
+    {
+      "loc": ["field_name"],
+      "msg": "Error description",
+      "type": "error_type"
+    }
+  ]
+}
+```
+
+### **Future Endpoints (Roadmap)**
+```http
+GET    /meals                 # List saved meal plans
+GET    /meals/{id}           # Get specific meal plan  
+PUT    /meals/{id}           # Update meal plan
+DELETE /meals/{id}           # Delete meal plan
+POST   /meals/{id}/favorite  # Mark as favorite
+
+GET    /inventory            # Get current inventory
+POST   /inventory/items      # Add inventory items
+PUT    /inventory/items/{id} # Update inventory item
+DELETE /inventory/items/{id} # Remove inventory item
 ```
 
 ---

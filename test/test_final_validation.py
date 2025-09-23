@@ -9,7 +9,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 def test_comprehensive_scenarios():
     print("=== COMPREHENSIVE API VALIDATION ===")
     
-    base_url = "http://127.0.0.1:8087/generate-meal-plan"
+    base_url = "http://127.0.0.1:8087/meals/generate"
     
     scenarios = [
         {
